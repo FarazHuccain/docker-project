@@ -7,7 +7,6 @@ app.use(express.json());
 
 app.use("/api/users", router);
 dotenv.config();
-console.log(process.env.MONGO_URI, "envvv");
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
