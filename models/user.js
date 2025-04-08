@@ -16,5 +16,13 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  age: {
+    type: Number,
+    required: true,
+  },
+  hobbies: {
+    type: [String],
+    required: true,
+  },
 });
 export default model("User", userSchema);
