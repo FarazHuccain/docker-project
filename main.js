@@ -11,8 +11,8 @@ app.use("/api/users", router);
 app.get("/", (req, res) => {
   res.send("Server is running 👋");
 });
-// dotenv.config()
-
+// dotenv.config();
+console.log(process.env.MONGO_URI);
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
