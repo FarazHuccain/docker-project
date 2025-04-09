@@ -9,6 +9,10 @@ RUN npm ci --omit=dev
 
 COPY . .
 
+COPY .env.production .env.production
+
 EXPOSE 8080
+
+ENV NODE_ENV=production
 
 CMD ["node", "main.js"]
