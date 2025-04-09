@@ -1,7 +1,9 @@
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
 import router from "./routes/route.js";
+import dotenvFlow from "dotenv-flow";
+dotenvFlow.config();
 const app = express();
 app.use(express.json());
 
@@ -9,7 +11,7 @@ app.use("/api/users", router);
 app.get("/", (req, res) => {
   res.send("Server is running 👋");
 });
-dotenv.config();
+// dotenv.config();
 
 mongoose
   .connect(process.env.MONGO_URI, {

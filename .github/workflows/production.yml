@@ -8,6 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      NODE_ENV: production
+      MONGO_URI: ${{ secrets.MONGO_URI_PROD }}
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -27,4 +31,4 @@ jobs:
           context: .
           file: Dockerfile.production
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/my-app:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/my-app:latest,${{ secrets.DOCKER_USERNAME }}/my-app:production

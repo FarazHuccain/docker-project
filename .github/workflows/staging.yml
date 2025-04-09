@@ -8,6 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      NODE_ENV: staging
+      MONGO_URI: ${{ secrets.MONGO_URI_STAGING }}
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -27,4 +31,4 @@ jobs:
           context: .
           file: Dockerfile.staging
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/my-app:staging
+          tags: ${{ secrets.DOCKER_USERNAME }}/my-app:staging,${{ secrets.DOCKER_USERNAME }}/my-app:latest
