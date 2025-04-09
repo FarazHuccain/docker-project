@@ -11,7 +11,7 @@ app.use("/api/users", router);
 app.get("/", (req, res) => {
   res.send("Server is running 👋");
 });
-// dotenv.config();
+// dotenv.config()
 
 mongoose
   .connect(process.env.MONGO_URI, {
