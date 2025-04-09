@@ -10,7 +10,6 @@ app.get("/", (req, res) => {
   res.send("Server is running 👋");
 });
 dotenv.config();
-
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
